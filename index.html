@@ -13,12 +13,28 @@
     </header>
 
     <main>
-      <div class="input"></div>
-      <div class="output"></div>
+      <div class="input">
+        <img
+          src="img/diving_dog.jpg"
+          alt="Underwater view of diving dog."
+          id="image_chosen"
+        />
+        <label for="meme-input">Text: </label>
+        <input type="text" id="meme_input" />
+      </div>
+      <div class="output">
+        <div id="canvas_div">
+          <canvas id="meme_canvas"
+            >Here should appear an image and some text.
+          </canvas>
+        </div>
+        <p id="output_text"></p>
+      </div>
     </main>
 
     <footer>
       &copy; Michael Gellings, 2019 | Imprint: [...]
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
