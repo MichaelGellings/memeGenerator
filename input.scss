@@ -10,7 +10,9 @@ $color-font: #e7efc5;
 
 $separating-line: solid 2px $color-secondary;
 
-*, *:before, *after {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
 }
@@ -26,10 +28,10 @@ body {
   display: grid;
   grid-template-rows: 6rem 1fr 2rem;
   grid-template-columns: 1fr;
-  grid-template-areas: 
-  "header" 
-  "main" 
-  "footer";
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
 
 header {
