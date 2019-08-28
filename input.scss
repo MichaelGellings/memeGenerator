@@ -1,0 +1,51 @@
+// Color scheme: https://coolors.co/413c58-a3c4bc-bfd7b5-e7efc5-f2dda4
+
+// https://coolors.co/12100e-30321c-4a4b2f-6b654b-d4df9e
+
+// https://coolors.co/130303-2d080a-7c3626-f5853f-ffcdbc
+
+$color-primary: #413c58;
+$color-secondary: #f2dda4;
+$color-font: #e7efc5;
+
+$separating-line: solid 2px $color-secondary;
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 16px Verdana, sans-serif;
+  color: $color-font;
+}
+
+body {
+  background: $color-primary;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 6rem 1fr 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  border-bottom: $separating-line;
+  padding: 1rem;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  border-top: $separating-line;
+  padding: 0.5em 1em;
+}
