@@ -16,6 +16,7 @@ $color-font: #ffcdbc;
 *:after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -50,11 +51,23 @@ main {
 .input {
   background: $color-secondary;
   flex: 1 0 20%;
+
+  img {
+    width: 80%;
+    display: block;
+  }
 }
 
 .output {
   background: $color-primary;
   flex: 1 0 50%;
+
+  #canvas_div {
+    width: 100%;
+    height: auto;
+    background: green;
+    display: block;
+  }
 }
 
 footer {
@@ -62,4 +75,8 @@ footer {
   grid-area: footer;
   // border-top: $separating-line;
   padding: 0.5em 1em;
+}
+
+canvas {
+  border: solid 2px white;
 }
