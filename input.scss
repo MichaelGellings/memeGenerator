@@ -4,11 +4,12 @@
 
 // https://coolors.co/130303-2d080a-7c3626-f5853f-ffcdbc
 
-$color-primary: #413c58;
-$color-secondary: #f2dda4;
-$color-font: #e7efc5;
+$color-primary: #2d080a;
+$color-secondary: #7c3626;
+$color-accent: #130303;
+$color-font: #ffcdbc;
 
-$separating-line: solid 2px $color-secondary;
+// $separating-line: solid 2px $color-accent;
 
 *,
 *:before,
@@ -23,7 +24,7 @@ html {
 }
 
 body {
-  background: $color-primary;
+  // background: $color-primary;
   height: 100vh;
   display: grid;
   grid-template-rows: 6rem 1fr 2rem;
@@ -35,17 +36,30 @@ body {
 }
 
 header {
+  background: $color-accent;
   grid-area: header;
-  border-bottom: $separating-line;
+  // border-bottom: $separating-line;
   padding: 1rem;
 }
 
 main {
   grid-area: main;
+  display: flex;
+}
+
+.input {
+  background: $color-secondary;
+  flex: 1 0 20%;
+}
+
+.output {
+  background: $color-primary;
+  flex: 1 0 50%;
 }
 
 footer {
+  background: $color-accent;
   grid-area: footer;
-  border-top: $separating-line;
+  // border-top: $separating-line;
   padding: 0.5em 1em;
 }
