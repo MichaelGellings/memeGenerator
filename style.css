@@ -1,0 +1,36 @@
+*, *:before, * after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 16px Verdana, sans-serif;
+  color: #e7efc5;
+}
+
+body {
+  background: #413c58;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 6rem 1fr 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header {
+  grid-area: header;
+  border-bottom: solid 2px #f2dda4;
+  padding: 1rem;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  border-top: solid 2px #f2dda4;
+  padding: 0.5em 1em;
+}
+
+/*# sourceMappingURL=style.css.map */
