@@ -22,5 +22,6 @@ The MVP contains the following:
 [x] Create input form.  
 [x] Show output text in output pane (with JS, no image yet).  
 [x] Add thumbnail and image.  
+[ ] Finetune output text on image (length, deletions).  
 [ ] Add submit button.  
 [ ] Review layout, fonts, color scheme, etc.
