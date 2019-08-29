@@ -31,6 +31,7 @@ The MVP contains the following:
 - If input text is too long:
   - Improve CSS of error message (input field frame red, warning symbol, etc.)
   - Improve functionality: offer second line, or similar.
-- Let user change horizontal alignment: offer options for left, centered, right.
+- Let user change horizontal alignment: offer options for `left`, `center`, `right`.
+- Let user position text box (if possible, with drag and drop)
 - Let user change font size.
-- Let user chang font: offer selection of black fonts.
+- Let user change font: offer selection of black fonts.
