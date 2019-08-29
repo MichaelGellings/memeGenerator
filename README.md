@@ -18,9 +18,9 @@ The MVP contains the following:
 
 ## Milestones
 
-[x] Create basic HTML structure and basic SASS.
-[x] Create input form.
-[x] Show output text in output pane (with JS, no image yet).
-[x] Add thumbnail and image.
-[ ] Add submit button.
+[x] Create basic HTML structure and basic SASS.  
+[x] Create input form.  
+[x] Show output text in output pane (with JS, no image yet).  
+[x] Add thumbnail and image.  
+[ ] Add submit button.  
 [ ] Review layout, fonts, color scheme, etc.
