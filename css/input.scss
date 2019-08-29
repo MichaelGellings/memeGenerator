@@ -49,6 +49,10 @@ main {
   }
 }
 
+.error {
+  color: red;
+}
+
 .output {
   background: $color-primary;
   flex: 1 0 50%;
@@ -58,6 +62,10 @@ main {
     height: auto;
     background: green;
     display: block;
+
+    canvas {
+      border: solid 2px white;
+    }
   }
 }
 
@@ -66,8 +74,4 @@ footer {
   grid-area: footer;
   // border-top: $separating-line;
   padding: 0.5em 1em;
-}
-
-canvas {
-  border: solid 2px white;
 }

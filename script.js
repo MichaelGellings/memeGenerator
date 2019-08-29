@@ -15,14 +15,28 @@ const img = document.getElementById("image_chosen");
 canvas.width = parent.offsetWidth;
 canvas.height = img.height * (parent.offsetWidth / img.width); // keeps ratio of the image
 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-ctx.font = "30px Verdana, sans-serif";
-ctx.strokeStyle = "black";
-ctx.lineWidth = 5;
-function outputInput(event) {
-  ctx.strokeText(event.target.value, 10, 50, canvas.width);
 
-  ctx.fillStyle = "white";
-  ctx.fillText(event.target.value, 10, 50, canvas.width);
+function outputInput(event) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+  let fontSize = canvas.height / 5;
+  let fontSizeString = fontSize + "px";
+  ctx.font = fontSizeString + " Impact, sans-serif";
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = fontSize / 8;
+  ctx.textAlign = "center";
+
+  let txt = event.target.value;
+
+  if (ctx.measureText(txt).width <= canvas.width - 20) {
+    ctx.strokeText(txt, canvas.width / 2, fontSize, canvas.width - 2);
+
+    ctx.fillStyle = "white";
+    ctx.fillText(txt, canvas.width / 2, fontSize, canvas.width - 2);
+  } else {
+    document.getElementById("err01").innerHTML = "Too long for one line!";
+  }
 }
 
 meme_text.addEventListener("keyup", outputInput);
