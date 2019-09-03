@@ -22,7 +22,12 @@ export function inputToOutput(event) {
   ctx.fillStyle = "white";
   ctx.textAlign = "center";
 
-  let txt = event.target.value;
+  let txt;
+  if (event) {
+    txt = event.target.value;
+  } else {
+    txt = "";
+  }
 
   if (ctx.measureText(txt).width <= canvas.width - 20) {
     clearCanvas();
@@ -30,15 +35,12 @@ export function inputToOutput(event) {
 
     // output text
 
-    function strokeAndFill(type) {
-      function drawText(txt, canvasWidth, fontSize) {
-        ctx.type(txt, canvasWidth / 2, fontSize);
-      }
-      return drawText;
+    function strokeAndFill() {
+      ctx.strokeText(arguments[0], arguments[1], arguments[2]);
+      ctx.fillText(arguments[0], arguments[1], arguments[2]);
     }
 
-    ctx.strokeText(txt, canvas.width / 2, fontSize);
-    ctx.fillText(txt, canvas.width / 2, fontSize);
+    strokeAndFill(txt, canvas.width / 2, fontSize);
   } else {
     // text too long for one line:
     document.querySelector("#err01").innerHTML = "Too long for one line!";
