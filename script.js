@@ -6,4 +6,4 @@ import {
 
 addEventListeners();
 clearCanvas();
-inputToOutput();
+inputToOutput(event);

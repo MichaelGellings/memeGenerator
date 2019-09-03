@@ -4,7 +4,7 @@ const img = document.querySelector("#image_current");
 
 const canvas = document.querySelector("#meme_canvas");
 const ctx = canvas.getContext("2d");
-canvas.width = parent.offsetWidth;
+const canvasWidth = (canvas.width = parent.offsetWidth);
 canvas.height = img.height * (parent.offsetWidth / img.width); // keeps ratio of the image
 
 export function addEventListeners() {
@@ -19,6 +19,7 @@ export function inputToOutput(event) {
   ctx.font = fontSizeString + " Impact, sans-serif";
   ctx.lineWidth = fontSize / 8;
   ctx.strokeStyle = "black";
+  ctx.fillStyle = "white";
   ctx.textAlign = "center";
 
   let txt = event.target.value;
@@ -28,8 +29,15 @@ export function inputToOutput(event) {
     document.querySelector("#err01").innerHTML = "";
 
     // output text
+
+    function strokeAndFill(type) {
+      function drawText(txt, canvasWidth, fontSize) {
+        ctx.type(txt, canvasWidth / 2, fontSize);
+      }
+      return drawText;
+    }
+
     ctx.strokeText(txt, canvas.width / 2, fontSize);
-    ctx.fillStyle = "white";
     ctx.fillText(txt, canvas.width / 2, fontSize);
   } else {
     // text too long for one line:
