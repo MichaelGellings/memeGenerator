@@ -19,10 +19,7 @@ canvas.height = img.height * (parent.offsetWidth / img.width); // keeps ratio of
 ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
 function inputToOutput(event) {
-  // clear output from previous functions calls
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
+  clearCanvas();
   // determine font attributes
   let fontSize = canvas.height / 5;
   let fontSizeString = fontSize + "px";
@@ -34,12 +31,21 @@ function inputToOutput(event) {
   let txt = event.target.value;
 
   if (ctx.measureText(txt).width <= canvas.width - 20) {
-    ctx.strokeText(txt, canvas.width / 2, fontSize, canvas.width - 2);
+    clearCanvas();
+    document.querySelector("#err01").innerHTML = "";
 
+    // output text
+    ctx.strokeText(txt, canvas.width / 2, fontSize);
     ctx.fillStyle = "white";
-    ctx.fillText(txt, canvas.width / 2, fontSize, canvas.width - 2);
+    ctx.fillText(txt, canvas.width / 2, fontSize);
   } else {
+    // text too long for one line:
     document.querySelector("#err01").innerHTML = "Too long for one line!";
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
   }
 }
 
