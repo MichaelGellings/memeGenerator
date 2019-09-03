@@ -1,17 +1,14 @@
-const meme_text_01 = document.querySelector("#input_text_01");
+import { getText, getAlign } from "./meme.js";
+
 const parent = document.querySelector("#canvas_div");
 const img = document.querySelector("#image_current");
 
 const canvas = document.querySelector("#meme_canvas");
 const ctx = canvas.getContext("2d");
-const canvasWidth = (canvas.width = parent.offsetWidth);
+canvas.width = parent.offsetWidth;
 canvas.height = img.height * (parent.offsetWidth / img.width); // keeps ratio of the image
 
-export function addEventListeners() {
-  meme_text_01.addEventListener("keyup", inputToOutput);
-}
-
-export function inputToOutput(event) {
+export function inputToOutput() {
   clearCanvas();
   // determine font attributes
   let fontSize = canvas.height / 5;
@@ -20,18 +17,27 @@ export function inputToOutput(event) {
   ctx.lineWidth = fontSize / 8;
   ctx.strokeStyle = "black";
   ctx.fillStyle = "white";
-  ctx.textAlign = "center";
+  ctx.textAlign = getAlign();
 
-  let txt;
-  if (event) {
-    txt = event.target.value;
-  } else {
-    txt = "";
-  }
-
-  if (ctx.measureText(txt).width <= canvas.width - 20) {
+  if (ctx.measureText(getText()).width <= canvas.width - 20) {
     clearCanvas();
     document.querySelector("#err01").innerHTML = "";
+
+    // determine start pos[ition] of text depending on alignment
+    let pos;
+    switch (ctx.textAlign) {
+      case "left":
+        pos = 20;
+        break;
+      case "center":
+        pos = canvas.width / 2;
+        break;
+      case "right":
+        pos = canvas.width - 20;
+        break;
+      default:
+        console.log("Something wrong with value for text alignment");
+    }
 
     // output text
 
@@ -40,7 +46,7 @@ export function inputToOutput(event) {
       ctx.fillText(arguments[0], arguments[1], arguments[2]);
     }
 
-    strokeAndFill(txt, canvas.width / 2, fontSize);
+    strokeAndFill(getText(), pos, fontSize);
   } else {
     // text too long for one line:
     document.querySelector("#err01").innerHTML = "Too long for one line!";

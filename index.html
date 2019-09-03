@@ -13,28 +13,37 @@
     </header>
 
     <main>
-      <div class="input">
+      <section class="input">
         <img
           src="img/diving_dog.jpg"
           alt="Underwater view of diving dog."
           id="image_current"
         />
-        <label for="input_text_01">Text: </label>
-        <input type="text" id="input_text_01" autofocus />
-        <p class="error" id="err01"></p>
-      </div>
+        <div class="input-line" id="input_01">
+          <label for="input_text_01">Text: </label>
+          <input type="text" id="input_text_01" autofocus />
+          Textausrichtung:<br />
+          <label for="align_left">Links</label>
+          <input type="radio" name="align_01" id="align_left" />
+          <label for="align_center">Mittig</label>
+          <input type="radio" name="align_01" id="aling_center" />
+          <label for="align_right">Rechts</label>
+          <input type="radio" name="align_01" id="aling_right" />
+          <p class="error" id="err01"></p>
+        </div>
+      </section>
 
-      <div class="output">
+      <section class="output">
         <div id="canvas_div">
           <canvas id="meme_canvas"
             >Here should appear an image and some text.
           </canvas>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer>
-      &copy; Michael Gellings, 2019 | Imprint: [...]
+      &copy; Michael Gellings, 2019 | Impressum: [...]
     </footer>
     <script type="module" src="script.js"></script>
   </body>

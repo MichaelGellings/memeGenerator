@@ -42,11 +42,21 @@ main {
 .input {
   background: $color-secondary;
   flex: 1 0 20%;
+  padding: 1em;
 
   img {
     width: 80%;
     display: block;
+    margin: 1em;
   }
+}
+
+input {
+  font-size: 1.5em;
+}
+
+input[type="radio"] {
+  margin-right: 1em;
 }
 
 .error {
