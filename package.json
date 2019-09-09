@@ -1,0 +1,28 @@
+{
+  "name": "memegenerator",
+  "version": "1.0.0",
+  "description": "In this project, I develop a Meme Generator using JS, CSS3 & HTML5.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "sass --watch css/input.scss css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theBearWhoCodes/memeGenerator.git"
+  },
+  "keywords": [
+    "meme",
+    "canvas",
+    "fonts"
+  ],
+  "author": "Michael Gellings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theBearWhoCodes/memeGenerator/issues"
+  },
+  "homepage": "https://github.com/theBearWhoCodes/memeGenerator#readme",
+  "dependencies": {
+    "sass": "^1.23.0-module.beta.1"
+  }
+}
