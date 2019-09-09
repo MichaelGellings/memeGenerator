@@ -22,7 +22,8 @@
     "url": "https://github.com/theBearWhoCodes/memeGenerator/issues"
   },
   "homepage": "https://github.com/theBearWhoCodes/memeGenerator#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "sass": "^1.23.0-module.beta.1"
   }
 }
